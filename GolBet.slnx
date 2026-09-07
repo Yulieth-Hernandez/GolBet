@@ -1,7 +1,7 @@
 <Solution>
-  <Project Path="GolBet.Datos/GolBet.Datos.csproj" />
-  <Project Path="GolBet.Entidades/GolBet.Entidades.csproj" />
+  <Project Path="GolBet.Entities/GolBet.Entities.csproj" />
   <Project Path="GolBet.Interfaces/GolBet.Interfaces.csproj" />
-  <Project Path="GolBet.Negocio/GolBet.Negocio.csproj" />
-  <Project Path="GolBet.Presentacion/GolBet.Presentacion.csproj" />
+  <Project Path="GolBet.Repositories/GolBet.Repositories.csproj" />
+  <Project Path="GolBet.Services/GolBet.Services.csproj" />
+  <Project Path="GolBet.Web/GolBet.Web.csproj" />
 </Solution>

@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GolBet.Interfaces\GolBet.Interfaces.csproj" />
+    <ProjectReference Include="..\GolBet.Entities\GolBet.Entities.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

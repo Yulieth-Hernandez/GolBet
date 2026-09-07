@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GolBet.Negocio\GolBet.Negocio.csproj" />
+    <ProjectReference Include="..\GolBet.Services\GolBet.Services.csproj" />
   </ItemGroup>
 
 </Project>
