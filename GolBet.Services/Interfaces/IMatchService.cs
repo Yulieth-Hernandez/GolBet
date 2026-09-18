@@ -7,4 +7,8 @@ public interface IMatchService
 {
     /// <summary>Match board: all active matches ordered by date.</summary>
     Task<IEnumerable<MatchDto>> GetBoardAsync(MatchStatus? status = null);
+
+    /// <summary>Match detail. Null if the match does not exist.</summary>
+    Task<MatchDetailDto?> GetDetailAsync(int id);
 }
+
