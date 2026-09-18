@@ -1,7 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\GolBet.Interfaces\GolBet.Interfaces.csproj" />
     <ProjectReference Include="..\GolBet.Entities\GolBet.Entities.csproj" />
     <ProjectReference Include="..\GolBet.Repositories\GolBet.Repositories.csproj" />
   </ItemGroup>
@@ -11,7 +10,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
