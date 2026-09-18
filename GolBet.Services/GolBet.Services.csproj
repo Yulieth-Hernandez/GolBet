@@ -3,6 +3,11 @@
   <ItemGroup>
     <ProjectReference Include="..\GolBet.Interfaces\GolBet.Interfaces.csproj" />
     <ProjectReference Include="..\GolBet.Entities\GolBet.Entities.csproj" />
+    <ProjectReference Include="..\GolBet.Repositories\GolBet.Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
   </ItemGroup>
 
   <PropertyGroup>

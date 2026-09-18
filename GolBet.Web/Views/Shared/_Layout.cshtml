@@ -25,6 +25,9 @@ data-bs-target="#navbarMain">
 <li class="nav-item">
 <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
 </li>
+<li class="nav-item">
+<a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
+</li>
 </ul>
 <!-- Aqui ira el enlace a Partidos (Modulo 3) y la sesion (Modulo 7) -->
 </div>
@@ -48,5 +51,6 @@ data-bs-target="#navbarMain">
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 
 
