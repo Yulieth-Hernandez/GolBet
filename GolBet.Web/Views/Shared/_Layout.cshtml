@@ -28,7 +28,12 @@ data-bs-target="#navbarMain">
 <li class="nav-item">
 <a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
 </li>
-<li class="nav-item"><a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a></li></ul>
+@if (User.IsInRole("Admin"))
+{
+<li class="nav-item"><a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a></li>
+}
+</ul>
+<partial name="_LoginPartial" />
 <!-- Aqui ira el enlace a Partidos (Modulo 3) y la sesion (Modulo 7) -->
 </div>
 </div>
@@ -58,6 +63,7 @@ data-bs-target="#navbarMain">
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 
 
 
