@@ -19,10 +19,11 @@ public class MatchesController : Controller
 
     // GET /Matches
     // GET /Matches?status=Scheduled
-    public async Task<IActionResult> Index(MatchStatus? status)
+    public async Task<IActionResult> Index(MatchStatus? status, string? search)
     {
         ViewBag.CurrentStatus = status;
-        var board = await _matchService.GetBoardAsync(status);
+        ViewBag.CurrentSearch = search;
+        var board = await _matchService.GetBoardAsync(status, search);
         return View(board);
     }
 
@@ -114,3 +115,4 @@ public class MatchesController : Controller
         ViewBag.Teams = new SelectList(teams, "Id", "Name");
     }
 }
+
