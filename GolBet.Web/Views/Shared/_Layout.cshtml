@@ -28,7 +28,7 @@ data-bs-target="#navbarMain">
 <li class="nav-item">
 <a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
 </li>
-</ul>
+<li class="nav-item"><a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a></li></ul>
 <!-- Aqui ira el enlace a Partidos (Modulo 3) y la sesion (Modulo 7) -->
 </div>
 </div>
@@ -36,6 +36,13 @@ data-bs-target="#navbarMain">
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @if (TempData["Success"] is string message)
+        {
+            <div class="alert alert-success alert-dismissible fade show">
+                ✅ @message
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
             @RenderBody()
         </main>
     </div>
@@ -51,6 +58,7 @@ data-bs-target="#navbarMain">
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
 
 
 
