@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using Serilog;
+using System.Globalization;
 using GolBet.Entities;
 using GolBet.Repositories.Data;
 using GolBet.Repositories.Implementations;
@@ -18,6 +19,9 @@ CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, config) =>
+    config.ReadFrom.Configuration(context.Configuration));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -71,12 +75,16 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Error/General");
     app.UseHsts();
 }
 
+// Status codes without a body (404 and friends): re-execute the pipeline
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSerilogRequestLogging();
 app.UseRouting();
 
 app.UseAuthentication(); // who are you? (reads the cookie, builds User)
@@ -87,5 +95,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
 
 
